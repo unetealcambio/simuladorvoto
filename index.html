@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="images/envelope.png" sizes="32x32">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <title>Document</title>
+
+    <style>
+        body{
+            background: #1e3c72;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        body::after {
+            content: "";
+  background: url(/images/prm-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;  
+        }
+        select {
+            text-align: center;
+        }
+
+        .header {
+            background: #FFB75E;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ED8F03, #FFB75E);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ED8F03, #FFB75E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            color: white;
+            margin-bottom: 5%;
+            font-size: 0.8rem;
+        }
+
+        .img-container {
+            margin-bottom: 5%;
+        }
+
+        .btn-container {
+            margin-top: 1%; 
+            margin-bottom: 10%;
+        }
+        @media screen and (min-width: 962px) { 
+            .img-container {
+                margin-bottom: 2em;
+            }
+
+            .btn-container {
+                margin-bottom: 3em;
+            }
+        }
+
+        @media screen and (orientation: landscape) {
+            
+        }
+
+        .blinking_white {
+  			-webkit-animation: color_change_white 1s infinite alternate;
+  			-moz-animation: color_change_white 1s infinite alternate;
+  			-ms-animation: color_change_white 1s infinite alternate;
+  			-o-animation: color_change_white 1s infinite alternate;
+  			animation: color_change_white 1s infinite alternate;
+		}
+		@-webkit-keyframes color_change_white {
+  			from { color: #fff; }
+  			to { color: #3498db; }
+		}
+		@-moz-keyframes color_change_white {
+  			from { color: #fff; }
+  			to { color: #3498db; }
+		}
+		@-ms-keyframes color_change_white {
+  			from { color: #fff; }
+  			to { color: #3498db }
+		}
+		@-o-keyframes color_change_white {
+  			from { color: #fff; }
+  			to { color: #3498db; }
+		}
+		@keyframes color_change_white {
+  			from { color: #fff; }
+  			to { color: #3498db; }
+		}
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid header">
+		<div class="row " style="font-size: 1rem;">
+			<div class="col-12 ">
+				<p class="litle-text" style="margin-bottom: 0.2rem;"><strong>Simulador Sistema De Voto Automatizado </strong></p>
+			</div>
+			<div class="col-12">
+				<p class="litle-text"><strong>Elecciones Ordinarias Generales Municipales 16 Febrero 2020</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row d-flex justify-content-center img-container">
+            <div class="col-5 col-md-3">
+                    <img src="images/rafa-logo.png" style="width: 100%">
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+                <form class="col-md-12 align-content-center">
+                        <div class="form-group row justify-content-center ">
+                                <label for="inputState" class="col-md-12 col-form-label col-form-label-md text-center" style="color: white;">Desea Ayuda Auditiva?</label>
+                                <div class="col-6 col-md-3">
+                                      <select id="audio" class="form-control ">
+                                        <option selected>Si</option>
+                                        <option>No</option>
+                                      </select>
+                                </div>
+                              </div>
+                 </form>
+        </div>
+
+        <div class="row d-flex justify-content-center text-center btn-container">
+            <div class="col-12 col-md-6">
+                <a href="alcalde.html" class="btn btn-light blinking_white" id="btn-iniciar" >Iniciar Simulacion</a>
+            </div>
+        </div>
+        
+    </div>
+    
+
+    <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js" ></script>
+	<script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script>
+
+		let audio = document.getElementById('audio')
+
+		let iniciar = document.getElementById('btn-iniciar')
+
+		iniciar.addEventListener('click', function(){
+			console.log("It's Work!")
+
+			console.log("It's Work!")
+
+			sessionStorage.setItem('audio', audio.options[audio.selectedIndex].value)
+		})
+
+       /* $('#btn-iniciar').click(function(){
+			console.log("It's Work!")
+			sessionStorage.setItem('municipio', municipio.options[municipio.selectedIndex].value)
+
+			sessionStorage.setItem('audio', audio.options[audio.selectedIndex].value)
+		})*/
+    </script>
+</body>
+</html>
